@@ -401,6 +401,41 @@ function updateVoiceButton() {
 }
 
 // ============================================================
+// SETTINGS MODAL
+// ============================================================
+function openSettings() {
+  // Highlight the currently active theme
+  const settings = getSettings();
+  document.querySelectorAll('.theme-option').forEach(opt => {
+    opt.classList.remove('active');
+  });
+  const currentThemeEl = document.querySelector(`[data-theme="${settings.theme}"]`);
+  if (currentThemeEl) {
+    currentThemeEl.classList.add('active');
+  }
+
+  document.getElementById('settings-modal').classList.add('active');
+}
+
+function closeSettings() {
+  document.getElementById('settings-modal').classList.remove('active');
+}
+
+function selectTheme(element) {
+  const themeName = element.getAttribute('data-theme');
+  if (!themeName) return;
+
+  // Update visual state
+  document.querySelectorAll('.theme-option').forEach(opt => {
+    opt.classList.remove('active');
+  });
+  element.classList.add('active');
+
+  // Apply theme
+  setTheme(themeName);
+}
+
+// ============================================================
 // INIT
 // ============================================================
 document.getElementById('task-text-input').addEventListener('keydown', (e) => {
