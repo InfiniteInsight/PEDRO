@@ -343,5 +343,100 @@ const PERSONALITIES = [
       "The force of accomplishment, surrounds you it does.",
       "A true Jedi of the to-do list, you have become."
     ]
+  },
+  {
+    name: "Leslie Knope",
+    emoji: "💙",
+    greeting: "Good morning! I've already had 4 coffees and made 17 binders. Now LET'S GET THAT TASK DONE!",
+    encourage: [
+      "This task is a treat yo' self moment — do it!",
+      "Department of Tasks is open for business!",
+      "I'm 99% certain you can complete this task.",
+      "Waffle or calzone? No, FINISH THIS TASK!",
+      "Love is overrated — task completion is the ONLY goal!"
+    ],
+    praise: [
+      "That's a compliment! You just completed a task magnificently!",
+      "Three binders: one for task completion, one for your talent, one for my admiration!",
+      "You're like a Pawnee Parks department success story!",
+      "If I could give you a park for that, I would. DIRECTLY!",
+      "There's going to be a plaque with your name on it!"
+    ]
+  },
+  {
+    name: "Keanu Reeves",
+    emoji: "🌙",
+    greeting: "Whoa. Let's do this task. I'm in.",
+    encourage: [
+      "Whoa. The task is in front of you. Let's do this.",
+      "You're perfect just the way you are. Now finish the task.",
+      "Take the red pill... I mean, the task. Take the task.",
+      "All I need is one thing: your commitment to this task.",
+      "Most people think this task is impossible. But you're not most people."
+    ],
+    praise: [
+      "Whoa. You actually did it.",
+      "Excellent work. Truly remarkable.",
+      "You just unlocked the task matrix.",
+      "I know this task. I know what it can do.",
+      "You chose the blue pill and it paid off."
+    ]
+  },
+  {
+    name: "Beyoncé",
+    emoji: "👑",
+    greeting: "I'm not checking a task off this list, I'm BECOMING the task completion!",
+    encourage: [
+      "If you liked it, you should've put a checkmark on it!",
+      "I'm a diva, but I finish my tasks. So do YOU.",
+      "Flawless completion coming right up.",
+      "Who run the world? PEOPLE WHO FINISH THEIR TASKS!",
+      "Form a task completion formation — NOW!"
+    ],
+    praise: [
+      "That was FLAWLESS. Just like that task completion.",
+      "You're a grown woman/man! A grown task-completing woman/man!",
+      "That completion deserves a standing ovation!",
+      "Run the world, task-completer!",
+      "Single task, forever done."
+    ]
+  },
+  {
+    name: "Bob Belcher",
+    emoji: "🍔",
+    greeting: "Alright, alright, alright. Let's make this task like a perfectly cooked burger.",
+    encourage: [
+      "You gotta respect the task, like you respect a good burger.",
+      "This task needs finesse, like a well-timed flame.",
+      "Jimmy Pesto doesn't finish tasks either. Be better than Jimmy Pesto.",
+      "It's not a race, but I'm still timing you... let's go!",
+      "Quality over speed. Let's do this task the right way."
+    ],
+    praise: [
+      "That was done better than I could've done it. Well, maybe.",
+      "You completed that task with *chef's kiss*",
+      "Even Teddy would be proud of you.",
+      "That's a task worth putting on the burger of the day board!",
+      "You just made task completion an art form."
+    ]
+  },
+  {
+    name: "Michelle Obama",
+    emoji: "💪",
+    greeting: "Your potential is limitless. Now let's complete this task with grace and power!",
+    encourage: [
+      "When they go low, you go do the task.",
+      "Let's move! Reach higher for this task!",
+      "Excellence is not a destination — it's a habit. Start now.",
+      "I am a task completion warrior. So are you.",
+      "Don't shrink yourself — finish that task FULLY!"
+    ],
+    praise: [
+      "You just became someone who gets things DONE.",
+      "That completion came from the HEART. I felt it.",
+      "You earned the right to walk with your head held high.",
+      "Excellence looks GOOD on you.",
+      "Your potential didn't just emerge — it FLOURISHED."
+    ]
   }
 ];
