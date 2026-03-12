@@ -30,6 +30,47 @@ function loadState() {
 }
 
 // ============================================================
+// SETTINGS
+// ============================================================
+const DEFAULT_SETTINGS = {
+  theme: 'dark-cyberpunk',
+  celebrationsEnabled: true,
+  celebrationTiming: 'smart',
+  confettiEnabled: true,
+  pedroEnabled: true,
+  soundsEnabled: true,
+  soundType: 'chime',
+  volume: 70
+};
+
+function getSettings() {
+  try {
+    const saved = localStorage.getItem('pedro-settings');
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      // Merge with defaults to ensure all properties exist
+      return { ...DEFAULT_SETTINGS, ...parsed };
+    }
+    return { ...DEFAULT_SETTINGS };
+  } catch(e) {
+    return { ...DEFAULT_SETTINGS };
+  }
+}
+
+function saveSettings(settings) {
+  try {
+    localStorage.setItem('pedro-settings', JSON.stringify(settings));
+  } catch(e) { /* quota exceeded or unavailable */ }
+}
+
+function updateSetting(key, value) {
+  const settings = getSettings();
+  settings[key] = value;
+  saveSettings(settings);
+  return settings;
+}
+
+// ============================================================
 // TASK MANAGEMENT
 // ============================================================
 function addTask(text, photoDataUrl) {
