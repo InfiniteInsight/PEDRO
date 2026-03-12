@@ -75,6 +75,37 @@ function celebrateTaskCompletion() {
 }
 
 // ============================================================
+// PEDRO WALK ANIMATION - Emoji walking across screen
+// ============================================================
+
+/**
+ * Triggers Pedro (raccoon emoji) walking animation across screen
+ * Creates a walking animation that moves the emoji from left to right
+ * Uses CSS animation for smooth, performant movement
+ */
+function triggerPedroWalk() {
+  const settings = getSettings();
+  if (!settings.celebrationsEnabled) return;
+
+  // Create overlay container
+  const overlay = document.createElement('div');
+  overlay.className = 'pedro-walk-overlay';
+
+  // Create Pedro element with emoji
+  const pedro = document.createElement('div');
+  pedro.className = 'pedro-walker';
+  pedro.textContent = '🦝';
+
+  overlay.appendChild(pedro);
+  document.body.appendChild(overlay);
+
+  // Remove overlay after animation completes (3.5 seconds)
+  setTimeout(() => {
+    overlay.remove();
+  }, 3500);
+}
+
+// ============================================================
 // WEB AUDIO API - Sound effects
 // ============================================================
 

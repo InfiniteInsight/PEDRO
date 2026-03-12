@@ -844,3 +844,37 @@ body {
     confetti-drift calc(var(--duration) / 2) ease-in-out var(--drift) forwards;
 }
 
+/* ============================================================
+   PEDRO WALK ANIMATION
+   ============================================================ */
+
+@keyframes pedro-walk-across {
+  0% {
+    left: -50px;
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 1;
+  }
+}
+
+.pedro-walk-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.pedro-walker {
+  position: fixed;
+  font-size: 64px;
+  animation: pedro-walk-across 3.5s ease-in-out forwards;
+  will-change: left;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
