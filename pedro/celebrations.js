@@ -3,6 +3,33 @@
 // ============================================================
 
 /**
+ * Master celebration function - triggers all enabled celebration effects
+ * Checks settings and activates confetti, Pedro walk animation, and sound effects
+ * Called when a task is completed and celebrations should be triggered
+ */
+function celebrate() {
+  const settings = getSettings();
+
+  // Only celebrate if celebrations are globally enabled
+  if (!settings.celebrationsEnabled) return;
+
+  // Trigger confetti if enabled
+  if (settings.confettiEnabled) {
+    triggerConfetti();
+  }
+
+  // Trigger Pedro walk animation if enabled
+  if (settings.pedroEnabled) {
+    triggerPedroWalk();
+  }
+
+  // Play sound effect if enabled
+  if (settings.soundsEnabled && settings.soundType) {
+    playSound(settings.soundType, settings.volume);
+  }
+}
+
+/**
  * Triggers a confetti celebration animation
  * Creates colorful confetti pieces that fall with randomized velocity
  * Colors adapt to the current theme

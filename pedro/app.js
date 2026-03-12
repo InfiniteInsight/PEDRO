@@ -8,7 +8,8 @@
 let state = {
   tasks: [],
   personality: null,
-  personalityDate: null
+  personalityDate: null,
+  completedTasksCount: 0  // Track completed tasks for celebration timing
 };
 
 function saveState() {
@@ -25,6 +26,7 @@ function loadState() {
       state.tasks = parsed.tasks || [];
       state.personality = parsed.personality || null;
       state.personalityDate = parsed.personalityDate || null;
+      state.completedTasksCount = parsed.completedTasksCount || 0;
     }
   } catch(e) { /* corrupted or unavailable */ }
 }
@@ -86,6 +88,58 @@ function initTheme() {
 // ============================================================
 // TASK MANAGEMENT
 // ============================================================
+
+/**
+ * Determines if a celebration should be triggered based on celebration timing setting
+ * Implements four timing modes: smart, every, random, milestones
+ *
+ * @returns {boolean} true if celebration should trigger, false otherwise
+ */
+function shouldCelebrate() {
+  const settings = getSettings();
+
+  // If celebrations are disabled, never celebrate
+  if (!settings.celebrationsEnabled) return false;
+
+  const timing = settings.celebrationTiming || 'smart';
+  const totalTasks = state.tasks.filter(t => t.done).length;
+
+  switch (timing) {
+    case 'every':
+      // Celebrate every task completion
+      return true;
+
+    case 'random':
+      // 50% chance to celebrate
+      return Math.random() < 0.5;
+
+    case 'milestones':
+      // Celebrate at milestones: 1, 5, 10, 25, 50, 100, etc.
+      return totalTasks === 1 ||
+             totalTasks === 5 ||
+             totalTasks === 10 ||
+             totalTasks === 25 ||
+             totalTasks === 50 ||
+             totalTasks === 100 ||
+             totalTasks % 100 === 0;
+
+    case 'smart':
+    default:
+      // Smart mode: first and last tasks always celebrate,
+      // random celebrations in between
+      const incompleteTasks = state.tasks.filter(t => !t.done).length;
+
+      // First task completion - always celebrate
+      if (totalTasks === 1) return true;
+
+      // Last task completion - always celebrate
+      if (incompleteTasks === 0 && totalTasks > 0) return true;
+
+      // In between - random chance (30%)
+      return Math.random() < 0.3;
+  }
+}
+
 function addTask(text, photoDataUrl) {
   if (!text && !photoDataUrl) return;
   const task = {
@@ -108,13 +162,32 @@ function addTask(text, photoDataUrl) {
 function toggleTask(id) {
   const task = state.tasks.find(t => t.id === id);
   if (!task) return;
+
+  const wasCompleted = task.done;
   task.done = !task.done;
+
+  // Update completed task count
+  if (task.done && !wasCompleted) {
+    state.completedTasksCount++;
+  } else if (!task.done && wasCompleted) {
+    state.completedTasksCount--;
+  }
+
   saveState();
   renderTasks();
 
-  if (task.done && state.personality) {
-    const msgs = state.personality.praise;
-    showToast(`${state.personality.emoji} ${msgs[Math.floor(Math.random() * msgs.length)]}`);
+  // If task is being completed (not uncompleted)
+  if (task.done && !wasCompleted) {
+    // Show personality praise message
+    if (state.personality) {
+      const msgs = state.personality.praise;
+      showToast(`${state.personality.emoji} ${msgs[Math.floor(Math.random() * msgs.length)]}`);
+    }
+
+    // Trigger celebration if conditions are met
+    if (shouldCelebrate()) {
+      celebrate();
+    }
   }
 }
 
