@@ -1,3 +1,11 @@
 presentation.html
 tuesday.html
 .env
+
+# Windows metadata files
+*:Zone.Identifier
+*:mshield
+
+# Testing documentation (optional - can be committed if needed)
+INTEGRATION_TESTING_SUMMARY.md
+TESTING_CELEBRATIONS.md
