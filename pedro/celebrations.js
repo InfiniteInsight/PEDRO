@@ -111,10 +111,19 @@ function triggerPedroWalk() {
   const overlay = document.createElement('div');
   overlay.className = 'pedro-walk-overlay';
 
-  // Create Pedro element with emoji
-  const pedro = document.createElement('div');
+  // Try to load GIF, fallback to emoji if it fails
+  const pedro = document.createElement('img');
   pedro.className = 'pedro-walker';
-  pedro.textContent = '🦝';
+  pedro.src = 'assets/pedro-walk.gif';
+  pedro.alt = 'Pedro the Raccoon';
+
+  // Fallback to emoji if GIF fails to load
+  pedro.onerror = function() {
+    const emojiDiv = document.createElement('div');
+    emojiDiv.className = 'pedro-walker';
+    emojiDiv.textContent = '🦝';
+    pedro.replaceWith(emojiDiv);
+  };
 
   overlay.appendChild(pedro);
   document.body.appendChild(overlay);

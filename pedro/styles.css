@@ -1040,10 +1040,21 @@ input[type="range"]::-moz-range-thumb:hover {
 
 .pedro-walker {
   position: fixed;
-  font-size: 64px;
   animation: pedro-walk-across 3.5s ease-in-out forwards;
   will-change: left;
   top: 50%;
   transform: translateY(-50%);
+}
+
+/* GIF image */
+.pedro-walker img,
+img.pedro-walker {
+  height: 150px;
+  width: auto;
+}
+
+/* Emoji fallback */
+div.pedro-walker {
+  font-size: 64px;
 }
 
