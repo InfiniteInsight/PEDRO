@@ -1,5 +1,6 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Base variables - default to dark cyberpunk theme */
 :root {
   --bg-dark: #1a0a2e;
   --bg-card: #2a1a4e;
@@ -14,6 +15,80 @@
   --shadow: 0 4px 20px rgba(0,0,0,0.3);
   --radius: 16px;
   --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Theme: Dark Cyberpunk (default) */
+[data-theme="dark-cyberpunk"] {
+  --bg-dark: #1a0a2e;
+  --bg-card: #2a1a4e;
+  --bg-input: #3a2a5e;
+  --accent-orange: #ff6b35;
+  --accent-green: #4ecdc4;
+  --accent-pink: #ff6b9d;
+  --accent-yellow: #ffe66d;
+  --text-primary: #f0e6ff;
+  --text-secondary: #b8a9d4;
+  --text-muted: #7a6b9a;
+}
+
+/* Theme: Light & Clean */
+[data-theme="light-clean"] {
+  --bg-dark: #f8f9fa;
+  --bg-card: #ffffff;
+  --bg-input: #e9ecef;
+  --accent-orange: #ff6b6b;
+  --accent-green: #4ecdc4;
+  --accent-pink: #ff6b9d;
+  --accent-yellow: #ffc107;
+  --text-primary: #1a535c;
+  --text-secondary: #495057;
+  --text-muted: #6c757d;
+  --shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Theme: Nature & Calm */
+[data-theme="nature"] {
+  --bg-dark: #2d3e2e;
+  --bg-card: #3d5a40;
+  --bg-input: #4a6b4e;
+  --accent-orange: #c9a847;
+  --accent-green: #80a05d;
+  --accent-pink: #b5896b;
+  --accent-yellow: #e8dcc4;
+  --text-primary: #f0e9d2;
+  --text-secondary: #d4c5a0;
+  --text-muted: #9a8f7a;
+  --shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* Theme: Sunset Warmth */
+[data-theme="sunset"] {
+  --bg-dark: #2b1b3d;
+  --bg-card: #3d2b4e;
+  --bg-input: #4d3b5e;
+  --accent-orange: #ff6b35;
+  --accent-green: #ff8c42;
+  --accent-pink: #ff6b9d;
+  --accent-yellow: #ffc857;
+  --text-primary: #f7dba7;
+  --text-secondary: #e8c896;
+  --text-muted: #c9a876;
+  --shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* Theme: Ocean Breeze */
+[data-theme="ocean"] {
+  --bg-dark: #0a1929;
+  --bg-card: #1a2942;
+  --bg-input: #2a3952;
+  --accent-orange: #00a8e8;
+  --accent-green: #4ecdc4;
+  --accent-pink: #7eb2dd;
+  --accent-yellow: #c8f4f9;
+  --text-primary: #c8f4f9;
+  --text-secondary: #a0d4e0;
+  --text-muted: #7eb2c0;
+  --shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
 html, body {
