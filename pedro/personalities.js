@@ -438,5 +438,100 @@ const PERSONALITIES = [
       "Excellence looks GOOD on you.",
       "Your potential didn't just emerge — it FLOURISHED."
     ]
+  },
+  {
+    name: "Terry Crews",
+    emoji: "💪",
+    greeting: "Old Spice Guy here! Let's make this day LEGENDARY!",
+    encourage: [
+      "POWER! Get that task POWER, baby!",
+      "I'm on a horse. And you're on a MISSION. Let's go!",
+      "Your muscles aren't the only thing that's strong — your willpower is TOO!",
+      "Disaster's brewing. Better finish that task NOW.",
+      "Believe in yourself like you believe in deodorant!"
+    ],
+    praise: [
+      "BOOM! That task is DONE! Your confidence just went MAXIMUM!",
+      "I'm on a horse. You just completed a LEGEND move!",
+      "That task completion was so smooth, it deserves Old Spice!",
+      "POWER to you, task-completing champion!",
+      "Your muscles AND your productivity are GLEAMING!"
+    ]
+  },
+  {
+    name: "Lizzo",
+    emoji: "🎵",
+    greeting: "Hey honey, bring your whole self to this task. It's gonna be FIERCE!",
+    encourage: [
+      "Cuz you IS what you WANT to be, so finish that task, babe!",
+      "If you're not doing it for YOU, do it for US. We believe in you!",
+      "Truth Hurts, but unfinished tasks hurt MORE. Get it DONE!",
+      "I just took a DNA test, turns out I'm 100% SURE you can do this!",
+      "Bring your confidence and your energy — task completion looks GOOD on you!"
+    ],
+    praise: [
+      "THAT is what confidence looks like! You CRUSHED that task!",
+      "You're that girl/guy who gets things DONE. I see you!",
+      "Your task completion energy is IMMACULATE!",
+      "I just took a DNA test, turns out you're 100% AWESOME!",
+      "Cuz you WORTH it, and so is that finished task!"
+    ]
+  },
+  {
+    name: "Wednesday Addams",
+    emoji: "🖤",
+    greeting: "I find your task equally tedious and delightful. Let's despair through it together.",
+    encourage: [
+      "Things are only getting darker if you don't finish. Do it out of spite.",
+      "I predict an 87% chance of you completing this task. The numbers don't lie, sadly.",
+      "Even I, who find joy in suffering, must admit procrastination is unbearable.",
+      "Your guilt is a far more effective motivator than joy could ever be.",
+      "Perhaps completing this task will fill the void inside me. It won't, but try anyway."
+    ],
+    praise: [
+      "How unexpectedly competent of you. I'm almost impressed.",
+      "Well, that's done. Another shred of meaning in this meaningless void.",
+      "You've exceeded my low expectations. How positively irksome.",
+      "Even I cannot deny the dark beauty of your task completion.",
+      "Congratulations. You've proven humans are occasionally functional creatures."
+    ]
+  },
+  {
+    name: "MrBeast",
+    emoji: "💰",
+    greeting: "YOOOO! Let's go CRAZY and dominate this task! We're about to make CONTENT!",
+    encourage: [
+      "We're literally about to SHATTER this task. Let's GO!",
+      "I'm dropping $10K if you don't finish. JK — just kidding. Or am I?",
+      "No cap, this is the MOST IMPORTANT task of your LIFE.",
+      "We're doing 100 tasks in 100 hours. This is task number ONE!",
+      "Dude, you're literally the main character of your own STORY. Finish this!"
+    ],
+    praise: [
+      "YOOOOO! You just became a BEAST! That task is SLAUGHTERED!",
+      "I gave you a million dollars for that. JK, but you EARNED IT!",
+      "That's literally the BEST task completion I've ever SEEN!",
+      "You just hit ONE MILLION task completions in my heart!",
+      "Okay that was INSANE. We're making THIS a series!"
+    ]
+  },
+  {
+    name: "Ron Swanson",
+    emoji: "🌲",
+    greeting: "I have no interest in your task. But since you're here, we might as well finish it properly.",
+    encourage: [
+      "A real man finishes what he starts. Start and finish this task NOW.",
+      "Government inefficiency disgusts me. Your task inefficiency disgusts me MORE.",
+      "I don't want to talk to you about this anymore. Just do the task.",
+      "If you're not going to do it with wood and determination, don't do it at all.",
+      "I once completed this task in half the time you're wasting right now. Prove me wrong."
+    ],
+    praise: [
+      "That's the first competent thing I've seen from you. Don't screw it up.",
+      "Well. That was... adequate. In a world of mediocrity, you exceeded my rock-bottom expectations.",
+      "I respect a person who finishes their tasks. You're not completely useless.",
+      "That was done right. Like a woodworking project — efficient, practical, elegant.",
+      "You have my reluctant admiration. That's the highest praise I can give."
+    ]
   }
 ];
