@@ -71,6 +71,19 @@ function updateSetting(key, value) {
 }
 
 // ============================================================
+// THEME SYSTEM
+// ============================================================
+function setTheme(themeName) {
+  document.body.setAttribute('data-theme', themeName);
+  updateSetting('theme', themeName);
+}
+
+function initTheme() {
+  const settings = getSettings();
+  document.body.setAttribute('data-theme', settings.theme);
+}
+
+// ============================================================
 // TASK MANAGEMENT
 // ============================================================
 function addTask(text, photoDataUrl) {
@@ -394,6 +407,7 @@ document.getElementById('task-text-input').addEventListener('keydown', (e) => {
   if (e.key === 'Enter') addTaskFromInput();
 });
 
+initTheme();
 loadState();
 renderTasks();
 updatePersonalityBanner();
