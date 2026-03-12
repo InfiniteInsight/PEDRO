@@ -289,6 +289,11 @@
             <div class="sound-name">Woohoo</div>
             <button class="sound-preview-btn" onclick="event.stopPropagation(); playSound('woohoo', 70)">▶</button>
           </div>
+          <div class="sound-card" data-sound="random" onclick="selectSound(this)">
+            <div class="sound-icon">🎲</div>
+            <div class="sound-name">Random</div>
+            <button class="sound-preview-btn" onclick="event.stopPropagation(); playRandomSound()">▶</button>
+          </div>
           <div class="sound-card" data-sound="none" onclick="selectSound(this)">
             <div class="sound-icon">🔇</div>
             <div class="sound-name">Silent</div>

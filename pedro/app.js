@@ -569,6 +569,12 @@ function selectSound(element) {
   updateSetting('soundType', soundType);
 }
 
+function playRandomSound() {
+  const soundOptions = ['chime', 'fanfare', 'pop', 'coins', 'woohoo'];
+  const randomSound = soundOptions[Math.floor(Math.random() * soundOptions.length)];
+  playSound(randomSound, 70);
+}
+
 function updateVolume(value) {
   document.getElementById('volume-value').textContent = value + '%';
   updateSetting('volume', parseInt(value));

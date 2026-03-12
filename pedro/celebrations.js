@@ -25,7 +25,13 @@ function celebrate() {
 
   // Play sound effect if enabled
   if (settings.soundsEnabled && settings.soundType) {
-    playSound(settings.soundType, settings.volume);
+    // If random is selected, pick a random sound type
+    let soundToPlay = settings.soundType;
+    if (soundToPlay === 'random') {
+      const soundOptions = ['chime', 'fanfare', 'pop', 'coins', 'woohoo'];
+      soundToPlay = soundOptions[Math.floor(Math.random() * soundOptions.length)];
+    }
+    playSound(soundToPlay, settings.volume);
   }
 }
 
