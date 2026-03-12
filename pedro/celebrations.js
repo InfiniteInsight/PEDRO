@@ -79,8 +79,8 @@ function triggerConfetti() {
     const rotation = Math.random() * 360;
     confetti.style.setProperty('--rotation', rotation + 'deg');
 
-    // Random animation duration (2-4 seconds)
-    const duration = 2 + Math.random() * 2;
+    // Fixed animation duration to match Pedro walk (3.5 seconds)
+    const duration = 3.5;
     confetti.style.setProperty('--duration', duration + 's');
 
     // Random horizontal drift (-1 to 1 second offset)
@@ -89,7 +89,7 @@ function triggerConfetti() {
 
     container.appendChild(confetti);
 
-    // Remove confetti after animation completes
+    // Remove confetti after animation completes (matches Pedro walk duration)
     setTimeout(() => {
       confetti.remove();
     }, duration * 1000);
