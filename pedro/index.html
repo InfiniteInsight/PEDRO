@@ -22,6 +22,7 @@
       <h1>PEDRO</h1>
       <p>Personal Executive Dysfunction Relief Operator</p>
     </div>
+    <button class="settings-btn" onclick="openSettings()" title="Settings">⚙️</button>
   </header>
 
   <!-- PERSONALITY BANNER -->
@@ -113,6 +114,67 @@
 
   <!-- TOAST -->
   <div id="toast"></div>
+
+  <!-- SETTINGS MODAL -->
+  <div id="settings-modal" class="modal" onclick="if(event.target === this) closeSettings()">
+    <div class="modal-content settings-panel">
+      <h2>⚙️ Settings</h2>
+
+      <!-- Theme Selection -->
+      <div class="setting-group">
+        <h3>🎨 Theme</h3>
+        <div class="theme-options">
+          <div class="theme-option" data-theme="dark-cyberpunk" onclick="selectTheme(this)">
+            <div class="theme-colors">
+              <span style="background: #1a0a2e"></span>
+              <span style="background: #ff6b35"></span>
+              <span style="background: #4ecdc4"></span>
+              <span style="background: #ffe66d"></span>
+            </div>
+            <div class="theme-name">Dark Cyberpunk</div>
+          </div>
+          <div class="theme-option" data-theme="light-clean" onclick="selectTheme(this)">
+            <div class="theme-colors">
+              <span style="background: #f8f9fa"></span>
+              <span style="background: #ff6b6b"></span>
+              <span style="background: #4ecdc4"></span>
+              <span style="background: #ffc107"></span>
+            </div>
+            <div class="theme-name">Light & Clean</div>
+          </div>
+          <div class="theme-option" data-theme="nature" onclick="selectTheme(this)">
+            <div class="theme-colors">
+              <span style="background: #2d3e2e"></span>
+              <span style="background: #80a05d"></span>
+              <span style="background: #c9a847"></span>
+              <span style="background: #e8dcc4"></span>
+            </div>
+            <div class="theme-name">Nature & Calm</div>
+          </div>
+          <div class="theme-option" data-theme="sunset" onclick="selectTheme(this)">
+            <div class="theme-colors">
+              <span style="background: #2b1b3d"></span>
+              <span style="background: #ff6b35"></span>
+              <span style="background: #ff8c42"></span>
+              <span style="background: #ffc857"></span>
+            </div>
+            <div class="theme-name">Sunset Warmth</div>
+          </div>
+          <div class="theme-option" data-theme="ocean" onclick="selectTheme(this)">
+            <div class="theme-colors">
+              <span style="background: #0a1929"></span>
+              <span style="background: #4ecdc4"></span>
+              <span style="background: #00a8e8"></span>
+              <span style="background: #c8f4f9"></span>
+            </div>
+            <div class="theme-name">Ocean Breeze</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="modal-close-btn" onclick="closeSettings()">Close</button>
+    </div>
+  </div>
 
 <script src="personalities.js"></script>
 <script src="app.js"></script>
