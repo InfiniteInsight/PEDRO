@@ -663,3 +663,152 @@ body {
   cursor: pointer;
   text-decoration: underline;
 }
+
+/* Settings button styles */
+.settings-btn {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 20px;
+  padding: 8px;
+  transition: color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-btn:hover {
+  color: var(--accent-orange);
+  transform: rotate(20deg);
+}
+
+/* Modal base styles */
+#settings-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(26, 10, 46, 0.7);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+#settings-modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  border: 2px solid var(--accent-orange);
+  box-shadow: 0 8px 32px rgba(255, 107, 53, 0.2);
+}
+
+/* Settings panel styles */
+.settings-panel {
+  position: relative;
+}
+
+.settings-panel h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.setting-group {
+  margin-bottom: 24px;
+}
+
+.setting-group h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+/* Theme selector styles */
+.theme-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.theme-option {
+  padding: 12px;
+  border: 2px solid var(--bg-input);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-option:hover {
+  border-color: var(--accent-orange);
+}
+
+.theme-option.active {
+  border-color: var(--accent-orange);
+  background: rgba(255, 107, 53, 0.1);
+  box-shadow: 0 0 16px rgba(255, 107, 53, 0.3);
+}
+
+.theme-colors {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+}
+
+.theme-colors span {
+  flex: 1;
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.theme-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+/* Modal close button styles */
+.modal-close-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
+  border: none;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.modal-close-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.4);
+}
