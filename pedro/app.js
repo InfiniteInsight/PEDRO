@@ -477,17 +477,48 @@ function updateVoiceButton() {
 // SETTINGS MODAL
 // ============================================================
 function openSettings() {
-  // Highlight the currently active theme
-  const settings = getSettings();
-  document.querySelectorAll('.theme-option').forEach(opt => {
-    opt.classList.remove('active');
-  });
-  const currentThemeEl = document.querySelector(`[data-theme="${settings.theme}"]`);
-  if (currentThemeEl) {
-    currentThemeEl.classList.add('active');
-  }
+  const modal = document.getElementById('settings-modal');
+  modal.classList.add('active');
 
-  document.getElementById('settings-modal').classList.add('active');
+  const settings = getSettings();
+
+  // Highlight current theme
+  document.querySelectorAll('.theme-option').forEach(opt => {
+    if (opt.dataset.theme === settings.theme) {
+      opt.classList.add('active');
+    } else {
+      opt.classList.remove('active');
+    }
+  });
+
+  // Set toggle states
+  document.getElementById('celebrations-toggle').checked = settings.celebrationsEnabled;
+  document.getElementById('confetti-toggle').checked = settings.confettiEnabled;
+  document.getElementById('pedro-toggle').checked = settings.pedroEnabled;
+  document.getElementById('sounds-toggle').checked = settings.soundsEnabled;
+
+  // Set timing selection
+  document.querySelectorAll('.radio-option').forEach(opt => {
+    if (opt.dataset.value === settings.celebrationTiming) {
+      opt.classList.add('selected');
+    } else {
+      opt.classList.remove('selected');
+    }
+  });
+
+  // Set sound selection
+  document.querySelectorAll('.sound-card').forEach(card => {
+    if (card.dataset.sound === settings.soundType) {
+      card.classList.add('selected');
+    } else {
+      card.classList.remove('selected');
+    }
+  });
+
+  // Set volume
+  const volumeSlider = document.getElementById('volume-slider');
+  volumeSlider.value = settings.volume;
+  document.getElementById('volume-value').textContent = settings.volume + '%';
 }
 
 function closeSettings() {
@@ -506,6 +537,41 @@ function selectTheme(element) {
 
   // Apply theme
   setTheme(themeName);
+}
+
+function toggleSetting(key, value) {
+  updateSetting(key, value);
+}
+
+function selectTiming(element) {
+  const value = element.dataset.value;
+
+  // Update visual selection
+  document.querySelectorAll('.radio-option').forEach(opt => {
+    opt.classList.remove('selected');
+  });
+  element.classList.add('selected');
+
+  // Save setting
+  updateSetting('celebrationTiming', value);
+}
+
+function selectSound(element) {
+  const soundType = element.dataset.sound;
+
+  // Update visual selection
+  document.querySelectorAll('.sound-card').forEach(card => {
+    card.classList.remove('selected');
+  });
+  element.classList.add('selected');
+
+  // Save setting
+  updateSetting('soundType', soundType);
+}
+
+function updateVolume(value) {
+  document.getElementById('volume-value').textContent = value + '%';
+  updateSetting('volume', parseInt(value));
 }
 
 // ============================================================

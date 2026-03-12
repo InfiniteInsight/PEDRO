@@ -172,6 +172,146 @@
         </div>
       </div>
 
+      <!-- Celebration Master Toggle -->
+      <div class="setting-group">
+        <div class="setting-row">
+          <div class="setting-label">
+            <div class="setting-label-main">🎊 Enable Celebrations</div>
+            <div class="setting-label-sub">Show confetti and Pedro animations when completing tasks</div>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="celebrations-toggle" checked onchange="toggleSetting('celebrationsEnabled', this.checked)">
+            <span class="toggle-slider"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Celebration Timing -->
+      <div class="setting-group">
+        <h3>⏰ When to Celebrate</h3>
+        <div class="radio-group">
+          <div class="radio-option" data-value="smart" onclick="selectTiming(this)">
+            <div class="radio-circle"></div>
+            <div class="radio-label">
+              <div class="radio-label-main">Smart Mode</div>
+              <div class="radio-label-sub">Always: first & last task. Random: tasks in between.</div>
+            </div>
+          </div>
+          <div class="radio-option" data-value="every" onclick="selectTiming(this)">
+            <div class="radio-circle"></div>
+            <div class="radio-label">
+              <div class="radio-label-main">Every Task</div>
+              <div class="radio-label-sub">Maximum dopamine! Celebrate everything.</div>
+            </div>
+          </div>
+          <div class="radio-option" data-value="random" onclick="selectTiming(this)">
+            <div class="radio-circle"></div>
+            <div class="radio-label">
+              <div class="radio-label-main">Random (50% chance)</div>
+              <div class="radio-label-sub">Keeps it special and unexpected.</div>
+            </div>
+          </div>
+          <div class="radio-option" data-value="milestones" onclick="selectTiming(this)">
+            <div class="radio-circle"></div>
+            <div class="radio-label">
+              <div class="radio-label-main">Milestones Only</div>
+              <div class="radio-label-sub">Celebrate every 5 tasks completed.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Confetti Toggle -->
+      <div class="setting-group">
+        <div class="setting-row">
+          <div class="setting-label">
+            <div class="setting-label-main">🎊 Show Confetti</div>
+            <div class="setting-label-sub">Colorful particles burst on screen</div>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="confetti-toggle" checked onchange="toggleSetting('confettiEnabled', this.checked)">
+            <span class="toggle-slider"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pedro Animation Toggle -->
+      <div class="setting-group">
+        <div class="setting-row">
+          <div class="setting-label">
+            <div class="setting-label-main">🦝 Show Dancing Pedro</div>
+            <div class="setting-label-sub">Pedro walks across screen celebrating with you</div>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="pedro-toggle" checked onchange="toggleSetting('pedroEnabled', this.checked)">
+            <span class="toggle-slider"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sound Effects -->
+      <div class="setting-group">
+        <div class="setting-row">
+          <div class="setting-label">
+            <div class="setting-label-main">🔊 Play Sound Effects</div>
+            <div class="setting-label-sub">Audio feedback when completing tasks</div>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="sounds-toggle" checked onchange="toggleSetting('soundsEnabled', this.checked)">
+            <span class="toggle-slider"></span>
+          </div>
+        </div>
+
+        <!-- Sound Type Selector -->
+        <div class="sound-options">
+          <div class="sound-card" data-sound="chime" onclick="selectSound(this)">
+            <div class="sound-icon">🔔</div>
+            <div class="sound-name">Chime</div>
+            <button class="sound-preview-btn" onclick="event.stopPropagation(); playSound('chime', 70)">▶</button>
+          </div>
+          <div class="sound-card" data-sound="fanfare" onclick="selectSound(this)">
+            <div class="sound-icon">🎺</div>
+            <div class="sound-name">Fanfare</div>
+            <button class="sound-preview-btn" onclick="event.stopPropagation(); playSound('fanfare', 70)">▶</button>
+          </div>
+          <div class="sound-card" data-sound="pop" onclick="selectSound(this)">
+            <div class="sound-icon">💥</div>
+            <div class="sound-name">Pop</div>
+            <button class="sound-preview-btn" onclick="event.stopPropagation(); playSound('pop', 70)">▶</button>
+          </div>
+          <div class="sound-card" data-sound="coins" onclick="selectSound(this)">
+            <div class="sound-icon">🪙</div>
+            <div class="sound-name">Coins</div>
+            <button class="sound-preview-btn" onclick="event.stopPropagation(); playSound('coins', 70)">▶</button>
+          </div>
+          <div class="sound-card" data-sound="woohoo" onclick="selectSound(this)">
+            <div class="sound-icon">🎉</div>
+            <div class="sound-name">Woohoo</div>
+            <button class="sound-preview-btn" onclick="event.stopPropagation(); playSound('woohoo', 70)">▶</button>
+          </div>
+          <div class="sound-card" data-sound="none" onclick="selectSound(this)">
+            <div class="sound-icon">🔇</div>
+            <div class="sound-name">Silent</div>
+            <button class="sound-preview-btn" onclick="event.stopPropagation()">-</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Volume Control -->
+      <div class="setting-group">
+        <div class="setting-row">
+          <div class="setting-label">
+            <div class="setting-label-main">🔊 Sound Volume</div>
+            <div class="setting-label-sub">Adjust celebration sound volume</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 12px; opacity: 0.7;">🔉</span>
+            <input type="range" min="0" max="100" value="70" id="volume-slider" oninput="updateVolume(this.value)">
+            <span id="volume-value" style="min-width: 35px; text-align: center; font-size: 13px; font-weight: 600;">70%</span>
+          </div>
+        </div>
+      </div>
+
       <button class="modal-close-btn" onclick="closeSettings()">Close</button>
     </div>
   </div>
